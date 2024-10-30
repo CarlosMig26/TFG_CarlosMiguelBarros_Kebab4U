@@ -1,0 +1,59 @@
+-- Esta es una guía para la instalación del proyecto Kebab4U --
+Extrae el proyecto del USB
+A la hora de introducir comandos no copies el símbolo >
+
+Primero necesitamos los instaladores de composer, Node.js y Xampp
+
+--------------------------------------------
+Composer: https://getcomposer.org/download/
+
+Si se quiere usar Composer en cualquier directorio se deberá añadir al path
+el directorio donde esté almacenado Composer.
+
+Una vez instalado comprueba que toda está instalado correctamente:
+> composer -V
+> composer self-update
+--------------------------------------------
+Node.js: https://nodejs.org/es/download
+
+Descargar el instalador
+Para poder ejecutar el instalador se necesitan permisos de administrador.
+Ejecutar Símbolo de sistema como administrador.
+Ir al directorio de descarga y ejecutar el archivo.
+Se abrirá el instalador. Seguir los pasos.
+
+Para comprobar ka instalación:
+> node -v
+> npm -v
+--------------------------------------------
+Xampp: https://www.apachefriends.org/es/download.html
+--------------------------------------------
+
+Una vez todo esté instalado correctamente vamos a la carpeta con el proyecto
+abre la aplicación Xampp y enciende los módulos Mysql y apache.
+
+Después abre una terminal en el proyecto y introduce los comandos:
+
+> composer install
+
+Y una vez acabe ese introduce
+
+> npm install
+
+Y por último crear, en phpmyadmin o en el administrador de base de datos que prefieras, una base de datos
+que se llame kebab4u_db y tengas instalado o crear una nueva y modificar el archivo .env en el campo:
+
+DB_DATABASE=kebab4u_db.
+
+Introduce en la terminal del proyecto:
+
+> php artisan migrate
+
+Una vez todo esté en orden introduce el sql del usb en phpmyadmin para introducir datos en la base de datos.
+
+Por último para que la funcionalidad de guardar/editar imágenes hay que añadir:
+
+> php artisan storage:link
+
+Todos los usuarios tienen la misma contraseña: 12345678
+

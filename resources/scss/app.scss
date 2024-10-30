@@ -1,0 +1,341 @@
+@import "footer";
+@import "restaurant";
+@import "map";
+@import "user";
+@import "extras";
+@import "header";
+@import "delivery";
+@import "cart";
+@import "comment";
+@import "create";
+@import "login";
+
+* {
+    box-sizing: border-box;
+}
+
+.sessionAlert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+
+    &.success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+
+    &.warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+
+    &.danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+
+    .close {
+        float: right;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: 0.5;
+        background: none;
+        border: none;
+    }
+}
+
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+h1 {
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: overlay;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.cardRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+
+
+    .card {
+        position: relative;
+        text-align: center;
+        width: 70vh;
+        color: $colWhite;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        margin: 20px 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+
+        .cardImg {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-radius: 5px 5px 0 0;
+
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 99%;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 5px 5px 0 0;
+            }
+
+            .centered {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                font-size: 3rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: white;
+            }
+
+            img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 5px 5px 0 0;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            align-self: flex-end;
+            margin-top: 10px;
+            text-decoration: none;
+            color: $colorPal1;
+        }
+
+        .cardTxt {
+            padding: 10px;
+            color: black;
+        }
+    }
+
+}
+
+.itemRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 20px;
+
+    .item {
+        position: relative;
+        text-align: center;
+        max-width: 300px;
+        color: #333;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        margin: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .itemImg {
+            width: 100%;
+            height: auto;
+            border-radius: 5px 5px 0 0;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px 5px 0 0;
+            }
+        }
+
+        .itemTxt {
+            padding: 15px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+
+            h2 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            a {
+                align-self: flex-end;
+                margin-top: 10px;
+                text-decoration: none;
+                color: $colorPal1;
+            }
+
+            .btn-delete {
+                background-color: $colorPal3;
+                color: $colWhite;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                margin-top: 10px;
+                align-self: center;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.address-map-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+
+    div {
+        width: 100%;
+        height: 500px;
+    }
+}
+
+div.resultsMsg {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+
+    h1 {
+        color: black;
+    }
+
+    h3 {
+        color: black;
+    }
+}
+
+.noRestaurants {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: black;
+    }
+
+    button {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: 400;
+        background-color: $colorPal3;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0.75rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+
+        a {
+            text-decoration: none;
+            color: $colWhite;
+        }
+    }
+}
+
+/* Estilos para la página de error 404 */
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+
+    .errorMsg {
+        h1 {
+            font-size: 10rem;
+            color: #404034;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #7d7c6c;
+            margin: 10px 0;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #7d7b6c;
+        margin: 20px 0;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: $colorPal1;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $colorPal3;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@import "variables";
+
+footer {
+    background-color: $colorPal5;
+    padding: 30px 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    .footerContainer {
+        max-width: 1170px;
+        margin: auto;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .footer {
+            background-color: $colorPal2;
+            padding: 50px 0;
+        }
+
+        .footer-col {
+            width: 33.3%;
+            padding: 0 15px;
+
+
+            h4 {
+                font-size: 18px;
+                color: $colorPal4;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -10px;
+                    background-color: $colorPal3;
+                    height: 2px;
+                    box-sizing: border-box;
+                    width: 50px;
+                }
+            }
+
+            ul li:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            ul li a {
+                font-size: 16px;
+                text-transform: capitalize;
+                color: $colorPal4;
+                text-decoration: none;
+                font-weight: 300;
+                display: block;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: $colorPal2;
+                    padding-left: 8px;
+                }
+            }
+
+            .social-links a {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-color: rgba(255, 255, 255, 0.2);
+                margin: 0 10px 10px 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: $colorPal2;
+                transition: all 0.5s ease;
+
+                &:hover {
+                    color: $colorPal4;
+                    background-color: $colorPal2;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+    }
+}

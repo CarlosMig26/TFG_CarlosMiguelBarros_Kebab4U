@@ -1,0 +1,190 @@
+@import "variables";
+
+body.comment {
+    font-family: 'Inter', sans-serif;
+
+    .comment-section {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        height: 100vh;
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .comments-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .comment-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            .comment-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+
+                strong {
+                    font-size: 1.2em;
+                    color: #555;
+                }
+
+                span {
+                    font-size: 0.9em;
+                    color: #999;
+                }
+            }
+
+            .comment-text {
+                margin: 10px 0;
+                font-size: 1em;
+                color: #666;
+            }
+
+            .comment-footer {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+
+                .btn-like, .btn-unlike {
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    &:hover {
+                        background-color: #0056b3;
+                    }
+                }
+
+                .btn-unlike {
+                    background-color: #dc3545;
+
+                    &:hover {
+                        background-color: #c82333;
+                    }
+                }
+            }
+
+            .comment-reply {
+                margin-top: 10px;
+                padding: 10px;
+                border-top: 1px solid #eee;
+                background-color: #f5f5f5;
+                border-radius: 5px;
+
+                strong {
+                    font-size: 1em;
+                    color: #333;
+                }
+
+                p {
+                    margin-top: 5px;
+                    font-size: 0.9em;
+                    color: #555;
+                }
+            }
+
+            form {
+                margin-top: 10px;
+
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                }
+
+                .btn-reply {
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #0056b3;
+                    }
+                }
+            }
+        }
+
+        .add-comment {
+            margin-top: 20px;
+
+            h2 {
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            form {
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                }
+
+                .btn-submit {
+                    background-color: #28a745;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #218838;
+                    }
+                }
+            }
+        }
+        p.warning{
+            color: $colorPal2;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    }
+
+
+    div.btn {
+        text-align: center;
+        width: 100%;
+        margin-top: 40px;
+        .btn-back {
+            text-decoration: none;
+            text-align: center;
+            background-color: #6c757d;
+            margin: 20px auto;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+
+            &:hover {
+                background-color: #5a6268;
+            }
+        }
+    }
+}
